@@ -4,6 +4,8 @@
 
 using namespace std;
 
+void handleInput();
+
 int main() {
     //Seed the random number generator.
     srand(time(0));
@@ -21,22 +23,18 @@ int main() {
     //TODO: Use a loop to keep asking the player for guesses until they guess correctly
     while (attempts < 10) {
         cout << "Enter your guess: ";
-        cin >> guess;
-
-        //TODO: Add input validation here
-        //Hint: check if cin failed
+        if (!(cin >> guess)) {
+            handleInput();
+        }
 
         attempts++;
 
-        // TODO: Compare guess to secretNumber
-        // If guess is too low, print "Too low!"
-        // If guess is correct, print "Congratulations! You guessed it in X attempts!" and break the loop 
         if(guess > secretNumber) {
-            cout << "Too high!";
+            cout << "Too high!\n";
         } else if (guess < secretNumber) {
-            cout << "Too low!";
+            cout << "Too low!\n";
         } else {
-            cout << "Correct!";
+            cout << "Correct! You guessed it in " << attempts << " attempts. \n \n";
             break;
         }
     }
@@ -44,4 +42,11 @@ int main() {
     cout << "Thanks for playing!" << endl;
 
     return 0;
+}
+
+void handleInput() {
+    cout << "\033[31m Invalid input! \033[0m";
+    cout << "Please enter a number: ";
+    cin.clear();
+    cin.ignore(1000, '\n');
 }
