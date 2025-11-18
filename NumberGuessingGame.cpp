@@ -11,14 +11,14 @@ int main() {
     srand(time(0));
 
     //Generate a random number between 1 and 100
-    int secretNumber = rand() % 1000 + 1;
+    int secretNumber = rand() % 100 + 1;
 
     int guess;
     int attempts = 0;
 
-    cout << "=== Number Guessing Game ===" << endl;
-    cout << "I have selected a number between 1 and 1000. Can you guess it?\n";
-    cout << "You have 10 attempts.";
+    cout << "===\033[34m Number\033[0m \033[32mGuessing\033[0m \033[33mGame\033[0m ===" << endl;
+    cout << "I have selected a number between 1 and 100. Can you guess it?\n";
+    cout << "You have 10 attempts. \n \n";
 
     //TODO: Use a loop to keep asking the player for guesses until they guess correctly
     while (attempts < 10) {
@@ -30,11 +30,11 @@ int main() {
         attempts++;
 
         if(guess > secretNumber) {
-            cout << "Too high!\n";
+            cout << "\033[33m Too high! \033[0m\n";
         } else if (guess < secretNumber) {
-            cout << "Too low!\n";
+            cout << "\033[34m Too low! \033[0m\n";
         } else {
-            cout << "Correct! You guessed it in " << attempts << " attempts. \n \n";
+            cout << "\033[32m Correct! You guessed it in " << attempts << " attempts. \033[0m \n \n";
             break;
         }
     }
