@@ -15,6 +15,7 @@ int main() {
 
     int guess;
     int attempts = 0;
+    char playAgainSelection;
 
     cout << "===\033[34m Number\033[0m \033[32mGuessing\033[0m \033[33mGame\033[0m ===" << endl;
     cout << "I have selected a number between 1 and 100. Can you guess it?\n";
@@ -39,8 +40,23 @@ int main() {
         }
     }
 
-    cout << "Thanks for playing!" << endl;
+    cout << "Thanks for playing!" << endl << endl;
 
+    while (true) {
+        cout << "Play again? ( y / n ): ";
+        cin >> playAgainSelection;
+
+        if (playAgainSelection == 'y' || playAgainSelection == 'n' ) {
+            if(playAgainSelection == 'y') {
+                //restart the game
+            } else {
+                break;
+            }
+
+        } else {
+            cout << "Invalid input. Please enter 'y' or 'n'. " << endl;
+        }
+    }
     return 0;
 }
 
