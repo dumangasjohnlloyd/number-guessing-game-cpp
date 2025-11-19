@@ -43,9 +43,7 @@ int main() {
         }
 
         if (attempts == 10)
-            cout << "\n1Out of attempts! The number was: " << secretNumber << "\n\n";
-
-        //add output if the player ran out of attempts
+            cout << "\n\033[35m Out of attempts! The number was: " << secretNumber << "\033[0m\n\n";
 
         while (true) {
             cout << "Play again? ( y / n ): ";
@@ -54,12 +52,12 @@ int main() {
             if (playAgainSelection == 'y' || playAgainSelection == 'n' ) {
                 break;
             } else {
-                cout << "Invalid input. Please enter 'y' or 'n'.\n" << endl;
+                cout << "\033[31mInvalid input.\033[0m Please enter 'y' or 'n'.\n" << endl;
             }
         }
 
         if(playAgainSelection == 'y') {
-            cout << "\nRestarting game...\n\n";
+            cout << "\n\033[32m Restarting game...\033[0m \n\n";
         } else {
             cout << "\nThanks for playing!\n";
             break;
