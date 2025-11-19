@@ -42,6 +42,9 @@ int main() {
             }
         }
 
+        if (attempts == 10)
+            cout << "\n1Out of attempts! The number was: " << secretNumber << "\n\n";
+
         //add output if the player ran out of attempts
 
         while (true) {
