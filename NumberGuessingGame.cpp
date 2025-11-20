@@ -17,9 +17,9 @@ int main() {
     while (true) {
         cout << "\n===\033[34m Number\033[0m \033[32mGuessing\033[0m \033[33mGame\033[0m ===" << endl;
         cout << "Select a difficulty:\n";
-        cout << "[1] Easy\n";
-        cout << "[2] Medium\n";
-        cout << "[3] Hard\n";
+        cout << "\033[33m[1] Easy\033[0m\n";
+        cout << "\033[32m[2] Medium\033[0m\n";
+        cout << "\033[35m[3] Hard\033[0m\n";
         while (true) {
             cout << "Enter your selection: ";
             if (!(cin >> difficultySelection)) {
@@ -33,8 +33,6 @@ int main() {
                 break;
             }
         }
-
-        //add input handling when user tries to enter a value beyond the scope
 
         switch (difficultySelection) {
             case 1: 
