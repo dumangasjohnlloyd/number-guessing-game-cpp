@@ -12,6 +12,8 @@ int main() {
     char playAgainSelection;
     int difficultySelection;
 
+    //Don't forget to add asci colors after adding input handling
+
     while (true) {
         cout << "\n===\033[34m Number\033[0m \033[32mGuessing\033[0m \033[33mGame\033[0m ===" << endl;
         cout << "Select a difficulty:\n";
@@ -23,7 +25,11 @@ int main() {
             if (!(cin >> difficultySelection)) {
                 handleInput();
                 continue;
-            } else {
+            } else if ( difficultySelection < 1 || difficultySelection > 3 ){
+                cout << "\033[31m Invalid selection. Please try again!\033[0m\n";
+                continue;
+            }            
+            else {
                 break;
             }
         }
