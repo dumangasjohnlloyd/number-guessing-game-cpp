@@ -74,7 +74,10 @@ int main() {
             } else if (guess < secretNumber) {
                 cout << "\033[34m Too low! \033[0m\n";
             } else {
-                cout << "\033[32m Correct! You guessed it in " << attempts << " attempts. \033[0m \n \n";
+                cout << "\033[32m Correct! You guessed it in " << attempts << " attempts. \033[0m \n";
+
+                int score = 1000 / attempts;
+                cout << "Your score is: " << score << endl << endl;
                 break;
             }
         }
