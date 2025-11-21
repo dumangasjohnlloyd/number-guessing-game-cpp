@@ -7,8 +7,11 @@ using namespace std;
 void handleInput();
 
 int main() {
-    int difficulty;
-    int easy = 100, medium = 500, hard = 1000;
+    //Seed the random number generator.
+    srand(time(0));
+
+    int difficultyLevels[] = {100, 500, 1000};
+    // int easy = 100, medium = 500, hard = 1000;
     char playAgainSelection;
     int difficultySelection;
 
@@ -34,22 +37,7 @@ int main() {
             }
         }
 
-        switch (difficultySelection) {
-            case 1: 
-                difficulty = easy;
-                break;
-            
-            case 2:
-                difficulty = medium;
-                break;
-            
-            case 3: 
-                difficulty = hard;
-        }
-        
-        //Seed the random number generator.
-        srand(time(0));
-
+        int difficulty = difficultyLevels[difficultySelection -1];
         //Generate a random number between 1 and 100
         int secretNumber = rand() % difficulty + 1;
         int guess;
