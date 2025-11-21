@@ -26,7 +26,7 @@ int main() {
                 handleInput();
                 continue;
             } else if ( difficultySelection < 1 || difficultySelection > 3 ){
-                cout << "\033[31m Invalid selection. Please try again!\033[0m\n";
+                cout << "\033[31mInvalid selection. Please try again!\033[0m\n";
                 continue;
             }            
             else {
@@ -70,11 +70,11 @@ int main() {
             attempts++;
 
             if(guess > secretNumber) {
-                cout << "\033[33m Too high! \033[0m\n";
+                cout << "\033[33mToo high! \033[0m\n";
             } else if (guess < secretNumber) {
-                cout << "\033[34m Too low! \033[0m\n";
+                cout << "\033[34mToo low! \033[0m\n";
             } else {
-                cout << "\033[32m Correct! You guessed it in " << attempts << " attempts. \033[0m \n";
+                cout << "\033[32mCorrect! You guessed it in " << attempts << " attempts. \033[0m \n";
 
                 int score = 1000 / attempts;
                 cout << "Your score is: " << score << endl << endl;
@@ -109,8 +109,8 @@ int main() {
 }
 
 void handleInput() {
-    cout << "\033[31m Invalid input! \033[0m";
-    cout << "Please enter a number.\n ";
+    cout << "\033[31mInvalid input! \033[0m";
+    cout << "Please enter a number.\n";
     cin.clear();
     cin.ignore(1000, '\n');
 }
