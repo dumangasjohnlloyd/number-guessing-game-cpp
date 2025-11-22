@@ -15,8 +15,8 @@ int main() {
     srand(time(0));
 
     int difficultyLevels[] = {100, 500, 1000};
-    char playAgainSelection;
     int difficultySelection;
+    char playAgainSelection;
 
     //Don't forget to add asci colors after adding input handling
 
@@ -26,6 +26,7 @@ int main() {
         cout << "\033[33m[1] Easy\033[0m\n";
         cout << "\033[32m[2] Medium\033[0m\n";
         cout << "\033[35m[3] Hard\033[0m\n";
+
         while (true) {
             cout << "Enter your selection: ";
             if (!(cin >> difficultySelection)) {
@@ -45,7 +46,6 @@ int main() {
         cout << "I have selected a number between 1 and " << difficulty << ". Can you guess it?\n";
         cout << "You have 10 attempts. \n \n";
 
-        //TODO: Use a loop to keep asking the player for guesses until they guess correctly
         while (attempts < 10) {
             cout << "Enter your guess: ";
             if (!(cin >> guess)) {
@@ -62,8 +62,7 @@ int main() {
             } else {
                 cout << "\033[32mCorrect! You guessed it in " << attempts << " attempts. \033[0m \n";
 
-                int score = 1000 / attempts;
-                cout << "Your score is: " << score << endl << endl;
+                cout << "Your score is: " << (100 / attempts) << "\n\n";
                 break;
             }
         }
@@ -75,21 +74,19 @@ int main() {
             cout << "Play again? ( y / n ): ";
             cin >> playAgainSelection;
 
-            if (playAgainSelection == 'y' || playAgainSelection == 'n' ) {
-                break;
-            } else {
-                cout << "\033[31mInvalid input.\033[0m Please enter 'y' or 'n'.\n" << endl;
-            }
+            if (playAgainSelection == 'y' || playAgainSelection == 'n' ) break;
+
+            cout << "\033[31mInvalid input.\033[0m Please enter 'y' or 'n'.\n" << endl;
         }
 
-        if(playAgainSelection == 'y') {
-            cout << "\n\033[32m Restarting game...\033[0m \n\n";
-        } else {
+        if(playAgainSelection == 'n') {
             cout << "\nThanks for playing!\n";
             break;
         }
-    }
 
+        cout << "\n\033[32m Restarting game...\033[0m \n";
+        
+    }
     
     return 0;
 }
