@@ -6,19 +6,22 @@ using namespace std;
 
 void handleInput();
 
+void printBanner() {
+    cout << "\n===\033[34m Number\033[0m \033[32mGuessing\033[0m \033[33mGame\033[0m ===\n";
+}
+
 int main() {
     //Seed the random number generator.
     srand(time(0));
 
     int difficultyLevels[] = {100, 500, 1000};
-    // int easy = 100, medium = 500, hard = 1000;
     char playAgainSelection;
     int difficultySelection;
 
     //Don't forget to add asci colors after adding input handling
 
     while (true) {
-        cout << "\n===\033[34m Number\033[0m \033[32mGuessing\033[0m \033[33mGame\033[0m ===" << endl;
+        printBanner();
         cout << "Select a difficulty:\n";
         cout << "\033[33m[1] Easy\033[0m\n";
         cout << "\033[32m[2] Medium\033[0m\n";
@@ -43,7 +46,7 @@ int main() {
         int guess;
         int attempts = 0;
 
-        cout << "\n===\033[34m Number\033[0m \033[32mGuessing\033[0m \033[33mGame\033[0m ===" << endl;
+        printBanner();
         cout << "I have selected a number between 1 and " << difficulty << ". Can you guess it?\n";
         cout << "You have 10 attempts. \n \n";
 
