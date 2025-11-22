@@ -31,20 +31,15 @@ int main() {
             if (!(cin >> difficultySelection)) {
                 handleInput();
                 continue;
-            } else if ( difficultySelection < 1 || difficultySelection > 3 ){
-                cout << "\033[31mInvalid selection. Please try again!\033[0m\n";
-                continue;
-            }            
-            else {
-                break;
             }
+            if (difficultySelection >= 1 && difficultySelection <= 3) break;
+            
+            cout << "\033[31mInvalid selection. Please try again!\033[0m\n";
         }
 
         int difficulty = difficultyLevels[difficultySelection -1];
-        //Generate a random number between 1 and 100
         int secretNumber = rand() % difficulty + 1;
-        int guess;
-        int attempts = 0;
+        int guess, attempts = 0;
 
         printBanner();
         cout << "I have selected a number between 1 and " << difficulty << ". Can you guess it?\n";
